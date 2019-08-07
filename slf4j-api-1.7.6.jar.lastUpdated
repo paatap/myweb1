@@ -1,0 +1,4 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Fri May 17 16:48:25 GET 2019
+http\://repo.magti.ge\:8081/nexus/content/groups/public/.error=Could not transfer artifact org.slf4j\:slf4j-api\:jar\:1.7.6 from/to nexus (http\://repo.magti.ge\:8081/nexus/content/groups/public)\: Connect to repo.magti.ge\:8081 [repo.magti.ge/10.231.246.78] failed\: Connection refused
+aa6e6cb09b2ebcc4547539b30ee91e536656da55@default-nexus-http\://repo.magti.ge\:8081/nexus/content/groups/public/.lastUpdated=1558097305337

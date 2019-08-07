@@ -45,7 +45,14 @@ public class titles {
     public static ResourceBundle ResourceBundlegetBundle(Locale curloc){
 
         try{
-            String str="/home/opt/test/lang/lang_"+curloc.getLanguage()+"_"+curloc.getCountry()+".properties";
+            String tom=System.getProperty("catalina.base");
+            int p=tom.lastIndexOf(File.separator);
+            if (p>=0) tom=tom.substring(0,p);
+
+            System.out.println("111111111111====="+System.getProperty("catalina.base")+"=="+File.separator+"=="+p);
+            System.out.println(tom);
+            if (tom.contains(".IntelliJIdea")) tom="/home/opt/test";
+            String str=tom+"/lang/lang_"+curloc.getLanguage()+"_"+curloc.getCountry()+".properties";
             System.out.println(str);
             File file = new File(str) ;
             FileInputStream input = new FileInputStream(file);
@@ -53,7 +60,8 @@ public class titles {
             //propety = new PropertyResourceBundle(new InputStreamReader(input, "UTF-8"));
             return propety;
         }catch(Exception e){
-            e.printStackTrace();
+            System.out.println("err="+e.toString());
+            //e.printStackTrace();
         }
         return null;
 //    return ResourceBundle.getBundle(str, curloc);
@@ -94,6 +102,17 @@ public class titles {
         return 0;
     }
     public int langid=0;
+    public String langname="<img src='icons/ge.jpg'/><div class='langtxt'>&nbsp;ქართული</div>";
+    public String getlocalcalendar(){
+        String mm=gettitle0("_months");
+        String dd=gettitle0("_days");
+        if (mm.contains(",")&&dd.contains(",")){
+            return "$.datePicker.defaults.strings=  {\n" +
+                    "    months: ["+mm+"],\n" +
+                    "        days: ["+dd+"]\n" +
+                    "}";
+        }else return "";
+    }
     public String gettitle0(String in_statement) {
 
         String ss = "";
@@ -127,7 +146,7 @@ System.out.println("---------"+ss);
             }
           //  System.out.println(in_statement+"=="+ss);
         } catch (Exception ee) {
-ee.printStackTrace();
+//ee.printStackTrace();
             ss = in_statement;
             //functions.addLog(10,url+"-"+ss);
         }
@@ -135,18 +154,21 @@ ee.printStackTrace();
     }
     public String getlangs(){
         if (langid==1){
-            return "      <option value=\"0\">ქართული</option>\n" +
-                    "      <option value=\"2\">English</option>\n" +
-                    "      <option value=\"1\" selected>Русский</option>";
+            return "      <option value=\"?\">ქართული</option>\n" +
+                    "      <option value=\"?lang=en\">English</option>\n" +
+                    "      <option value=\"?lang=ru\" selected>Русский</option>";
         }else if (langid==2){
-            return "      <option value=\"0\">ქართული</option>\n" +
-                    "      <option value=\"2\" selected>English</option>\n" +
-                    "      <option value=\"1\">Русский</option>";
+            return "      <option value=\"?\">ქართული</option>\n" +
+                    "      <option value=\"?lang=en\" selected>English</option>\n" +
+                    "      <option value=\"?lang=ru\">Русский</option>";
         }
-        return "      <option value=\"0\" selected>ქართული</option>\n" +
-                "      <option value=\"2\">English</option>\n" +
-                "      <option value=\"1\">Русский</option>";
+        return "      <option value=\"?\" selected>ქართული</option>\n" +
+                "      <option value=\"?lang=en\">English</option>\n" +
+                "      <option value=\"?lang=ru\">Русский</option>";
     }
+
+
+
     static public String conv2_UTF(String ss)
     {
         try

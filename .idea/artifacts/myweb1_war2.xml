@@ -3,6 +3,13 @@
     <output-path>$PROJECT_DIR$/../../../opt/test/apache-tomcat-8.5.11/webapps</output-path>
     <root id="archive" name="myweb1.war">
       <element id="artifact" artifact-name="myweb1:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="javax.websocket:javax.websocket-api:1.1" />
+          <element id="library" level="project" name="log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="javax.enterprise:cdi-api:2.0.SP1" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>

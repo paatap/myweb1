@@ -1,71 +1,66 @@
-/* The navigation menu */
-.navbar {
-    overflow: hidden;
-    /*background-color: #333;*/
-}
+/* Dropdown Button */
+.dropbtn {
+    background-color: white;
 
-/* Navigation links */
-.navbar a {
-    float: left;
-    font-size: 17px;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-/* The subnavigation menu */
-.subnav {
-    float: left;
-    overflow: hidden;
-}
-
-/* Subnav button */
-.subnav .subnavbtn {
-    font-size: 17px;
+    font-size: 32px;
     border: none;
-    outline: none;
-    color: black;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
+    width: 50px;
+    height: 50px;
 
-/* Add a red background color to navigation links on hover */
-.navbar a:hover, .subnav:hover .subnavbtn {
-    background-color: blue;
-    color: white;
 }
+.langbtn {
+    background-color: white;
+    font-size: 16pt;
+    border: none;
+    vertical-align: middle;
+    min-width: 155px;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+}
+.langtxt{
+    vertical-align: middle;
+    float:right;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    transform: translateY(-2em);
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+    visibility: hidden; /* hides sub-menu */
+    opacity: 0;
 
-/* Style the subnav content - positioned absolute */
-.subnav-content {
-    display: none;
     position: absolute;
-    left: 0;
-    background-color: blue;
-    color: white;
-    width: 100%;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
-/* Style the subnav links */
-.subnav-content a {
-    float: left;
-    color: white;
-    text-decoration: none;
-}
-
-/* Add a grey background color on hover */
-.subnav-content a:hover {
-    background-color: #eee;
+/* Links inside the dropdown */
+.dropdown-content a {
     color: black;
-}
-
-/* When you move the mouse over the subnav container, open the subnav content */
-.subnav:hover .subnav-content {
+    padding: 12px 16px;
+    text-decoration: none;
     display: block;
 }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0.3s;
+    visibility: visible; /* shows sub-menu */
+    opacity: 1;
+
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: lightblue;}
 /*-------------------------------custom-select-----------------------------------*/
 .custom-select {
     position: relative;
@@ -132,20 +127,782 @@
 }
 /*----------------------------imgbtn------------------------------------------------------*/
 .imgbtn {
-    cursor: pointer;
+    height:145px;
+    padding:0;
 }
+.imgbtn:hover {
+    background-color: #574DFA;
+    color: white;
+}
+.imgbtn:active {
+    background-color: #170DAA;
+    color: white;
+    border: 3px solid #5bc0de;
+}
+.imgbtn2 {
+    margin-bottom: 15px;
+    height:72px;
+    padding:0;
+}
+.imgbtn2:hover {
+    background-color: #574DFA;
+    color: white;
+}
+.imgbtn2:active {
+    background-color: #170DAA;
+    color: white;
+    border: 3px solid #5bc0de;
+}
+
 .imgbottom {
     cursor: pointer;
+
+    opacity: 0.7;
+    background-color: #262626;
+}
+.imgbottom2 {
+    cursor: pointer;
     position: fixed;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0.7;
+    background-color: #262626;
+}
+.imgbottom:hover {
+    background-color: #574DFA;
+    color: white;
+}
+.imgbottom:active {
+    background-color: #170DAA;
+    color: white;
+    border: 3px solid #5bc0de;
+}
+#imgbottomx {
     right: 0;
-    bottom: 0;
+    position: absolute;
+    z-index:11;
 }
 .fixtab{
     table-layout: fixed;
-    display: block;
-    overflow-x: auto;
+
+    overflow-x: hidden;
+    width:100%;
 }
 .fixtd{
-    align:center;
-    width:200px;
+    min-width:200px;
+    text-align: center;
+}
+.imgtop {
+    cursor: pointer;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    opacity: 0.7;
+}
+/*-------------------------- display: block;--------------------------------------------------------*/
+
+
+
+.pn-ProductNav_Wrapper {
+    position: relative;
+    /*padding: 0 11px;*/
+    box-sizing: border-box;
+}
+
+.pn-ProductNav {
+    /* Make this scrollable when needed --auto*/
+    overflow-x: hidden;
+    /* We don't want vertical scrolling */
+    overflow-y: hidden;
+    /* For WebKit implementations, provide inertia scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* We don't want internal inline elements to wrap */
+    white-space: nowrap;
+    /* If JS present, let's hide the default scrollbar */
+
+    /* positioning context for advancers */
+    position: relative;
+// Crush the whitespace here
+font-size: 0;
+}
+
+
+
+
+
+.pn-ProductNav_Link {
+    text-decoration: none;
+    color: #888;
+// Reset the font size
+font-size: 1.2rem;
+    font-family: -apple-system, sans-serif;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    border: 3px solid #5bc0de;
+    padding: 0 11px;
+
+}
+
+.pn-Advancer {
+    /* Reset the button */
+    appearance: none;
+    background: transparent;
+    padding: 0;
+    border: 0;
+
+    /* Now style it as needed */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /* Set the buttons invisible by default */
+    opacity: 0;
+    transition: opacity .3s;
+    cursor: pointer;
+    height: 110px;
+}
+
+.pn-Advancer_Left {
+    left: 0;
+}
+
+.pn-Advancer_Right {
+    right: 0;
+}
+
+.pn-Advancer_Icon {
+    width: 20px;
+    height: 44px;
+    fill: #bbb;
+}
+
+.pn-ProductNav_Indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100px;
+    background-color: transparent;
+    transform-origin: 0 0;
+    transition: transform .2s ease-in-out, background-color .2s ease-in-out;
+}
+/*----------------------------------------------------------------------------------*/
+ul.tabs{
+    float: left;
+    width:20%;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+ul.tabs li{
+    background: none;
+    color: #222;
+
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+ul.tabs li.current{
+    background: #ededed;
+    color: #222;
+}
+ul.tabs li.newmessage{
+    background: none;
+    color: red;
+
+    padding: 10px 15px;
+    cursor: pointer;
+}
+ul.tabs li.current.newmessage{
+    background: #ededed;
+    color: red;
+}
+
+.tab-content{
+    width:80%;
+    float: left;
+    display: none;
+}
+
+.tab-content.current{
+    display: inherit;
+}
+
+.mymessage{
+    position: absolute;
+    left:10%;
+    top:40%;
+
+    background:linear-gradient(to bottom, #aabb99, #ccaa22);
+    opacity: 0.5;
+    border-radius:10px;
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
+    display:none;
+}
+.mybutton {
+    width: 100px;
+    background: #C5C5F1;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+.mybutton:hover,.mybutton:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
+}
+/*----------------------------------------------------------------------------------*/
+.onerow2{
+    float: left;
+    width:50%;
+    min-width: 190px;
+}
+.onerow5{
+    float: left;
+    width:20%;
+}
+.leftlegend {
+    display: none;
+    position: absolute;
+    transform: translateY(-12px);
+    background-color: white;
+    text-align: left;
+    font-size: 14px;
+    margin:0px 5px;
+    width: fit-content;
+}
+.leftlegendda {
+    display: block;
+    position: absolute;
+    transform: translateY(-12px);
+    background-color: white;
+    text-align: left;
+    font-size: 14px;
+    margin:0px 5px;
+    width: fit-content;
+}
+
+.myinput {
+    font-size: 14px;
+    width:100%;
+    padding-left: 15px;
+}
+.mycheckbox {
+    float: left;
+    margin-right: 15px;
+}
+
+
+.mybtn {
+    border: 1px solid white;
+    background-color: #262626;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    background-position : center center;
+    background-repeat:no-repeat;
+}
+
+
+.mybtn:hover {
+    background-color: #574DFA;
+    color: white;
+}
+@font-face {
+    font-family: bpg_mrgvlovani_caps_2010;
+    src: url(bpg_mrgvlovani_caps_2010.ttf);
+}
+@font-face {
+    font-family: bpg_mrgvlovani_2010;
+    src: url(bpg_mrgvlovani_2010.ttf);
+}
+
+@media (min-width: 768px){
+    .mycontainer {
+        max-width: 720px;
+    }}
+@media (min-width: 992px){
+    .mycontainer {
+        max-width: 960px;
+    }}
+@media (min-width: 1200px){
+    .mycontainer {
+        max-width: 1140px;
+    }}
+
+@media (min-width: 768px){
+    .mybig {
+        display: flex;
+    }}
+@media (max-width: 768px){
+    .mybig {
+        display:none;
+    }}
+@media (min-width: 768px){
+    .mysmall {
+        display: none;
+    }}
+@media (max-width: 768px){
+    .mysmall {
+        display:flex;
+    }}
+
+@media (min-width: 580px){
+    .mybig2 {
+        display: flex;
+    }}
+@media (max-width: 580px){
+    .mybig2 {
+        display:none;
+    }}
+@media (min-width: 580px){
+    .mysmall2 {
+        display: none;
+    }}
+@media (max-width: 580px){
+    .mysmall2 {
+        display:flex;
+    }}
+
+.colorbl{
+  color:  #232A2F ;
+}
+.colorgr{
+    color:  #777777 ;
+}
+.colorred{
+    color:  red ;
+}
+@media (min-width: 1200px) {
+    .container1200 {
+        max-width: 1200px;
+    }
+}
+.mysocialbtn{
+    width: 48px;
+    height: 48px;
+    padding: 0;
+   margin: auto;
+    border:none;
+}
+
+.fade2 {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all .2s linear;
+
+}
+
+.fade2.show {
+    opacity: 1;
+    transform: scale(1);
+}
+.mydatepicker{
+    background-image:url('../icons/calendar.png');
+    background-repeat:no-repeat;
+    background-position: right;
+}
+.myfieldset{
+    border:1px solid slategray;
+}
+
+.mybtn2 {
+    height: 44px;
+    font-size: 14px;
+    font-family: bpg_mrgvlovani_caps_2010;
+    background-color: #574DFA;
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+.mybtn2:hover {
+    background-color: #372DDA;
+    color: white;
+}
+.mybtn2:active {
+    background-color: #170DAA;
+    color: white;
+}
+.header24{
+    text-align: center;font-size: 24px;font-family: bpg_mrgvlovani_caps_2010;height:24px;margin-bottom: 10px;
+}
+.transformy-5{
+    transform: translateY(-5px); width: fit-content;margin: auto;
+}
+.header14{
+    text-align: center;font-size: 14px;font-family: bpg_mrgvlovani_2010;height:19px;margin-bottom: 45px;
+}
+.transformy-1{
+    transform: translateY(-1px); width: fit-content;margin: auto;
+}
+.transformy-2{
+    transform: translateY(-2px); width: fit-content;margin: auto;
+}
+
+
+.myselect{
+    width:100%;background-color: white;height:44px;
+     color:#888888;
+    padding-left: 15px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    /* no standardized syntax available, no ie-friendly solution available */
+}
+/*
+select.input-lg {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+
+}
+*/
+select + i.fa {
+    float: right;
+    margin-top: -52px;
+    margin-right: 5px;
+    /* this is so when you click on the chevron, your click actually goes on the dropdown menu */
+    pointer-events: none;
+    /* everything after this is just to cover up the original arrow */
+    /* (for browsers that don't support the syntax used above) */
+    background-color: #fff;
+    padding-right: 5px;
+}
+.invalid {
+     background-color: #ffdddd;
+ }
+
+/*-------------------------*/
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+    background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+    display: none;
+}
+
+#prevBtn {
+    background-color: white;
+    color:#574DFA;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step.active {
+    opacity: 1;
+}
+.step.none {
+    display: none;
+}
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #574DFA;
+}
+
+.formtitle {
+    text-align: right;
+    width: 50%;
+    color: #574DFA;
+    font-family: bpg_mrgvlovani_caps_2010;
+}
+
+.forminput {
+    width: 50%;
+    color: #777777;
+
+}
+
+.myradiovert {
+    margin-right: 10px;
+    width: auto;
+}
+
+.myradiotext {
+    padding-left: 5px;
+    color: #777777;
+    height: 16px;
+    transform: translateY(-2px);
+}
+
+/*------------------------------------*\
+	NAV
+\*------------------------------------*/
+.rightmenu{
+    list-style:none;
+    /*font-weight:bold;*/
+    padding: 5px;
+    /*margin-bottom:10px;*/
+    /* Clear floats */
+    /*float:left;*/
+    width:100%;
+    /* Bring the nav above everything else--uncomment if needed.
+    position:relative;
+    z-index:5;
+    */
+}
+.rightmenu li{
+    float:left;
+
+    position:relative;
+}
+.menuhead{
+
+    display:block;
+    padding:5px;
+    color:#fff;
+    background:#574DFA;
+    text-decoration:none;
+}
+.rightmenu a{
+    display:block;
+    padding:5px;
+    color:#fff;
+
+    text-decoration:none;
+}
+
+/*--- DROPDOWN ---*/
+.rightmenu ul{
+    list-style:none;
+    position:absolute;
+    /* left:-9999px; Hide off-screen when not needed (this is more accessible than display:none;) */
+left:auto;
+
+    transform: translateY(-2em);
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+    visibility: hidden; /* hides sub-menu */
+    opacity: 0;
+
+
+
+    min-width: 160px;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding-left: unset;
+margin-right:-10px;
+    right:0;
+}
+.rightmenu ul li{
+    /*padding-top:1px;  Introducing a padding between the li and the a give the illusion spaced items */
+    float:none;
+    text-align: left;
+    white-space:nowrap;
+}
+.rightmenu ul a{
+    height: 40px;
+    white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+.rightmenu li:hover ul{ /* Display the dropdown on hover */
+    /*    left:auto;  Bring back on-screen when needed */
+    right:0;
+    margin-right:-10px;
+    visibility: visible; /* hides sub-menu */
+    opacity: 1;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0.3s;
+}
+.rightmenu11 li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+    background:green;
+    text-decoration:underline;
+}
+.rightmenu li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+    text-decoration:none;
+    color:#000;
+}
+.rightmenu li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+    background:#574DFA;
+    color:#fff;
+}
+
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: -3px;
+    left: 0;
+    right: -2px;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 17px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.tabheader{
+    color:#574DFA;
+    text-decoration: underline;
+}
+.my830 {
+    display: flex;
+    width:830px;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.my830b {
+    margin: 15px;
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+}
+.my830c {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+}
+.my830a {
+    border: 1px solid #CCCCCC;
+    height: 50px;
+    width: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.myfont14capsgray {
+    font-size: 14px;
+    font-family: bpg_mrgvlovani_caps_2010;
+    color: #777777;
+}
+.myfont14capsblack {
+    font-size: 14px;
+    font-family: bpg_mrgvlovani_caps_2010;
+    color: #232A2F;
+}
+.myfont14black {
+    font-size: 14px;
+    font-family: bpg_mrgvlovani_2010;
+    color: #232A2F;
+}
+.myfont19capsblue {
+    font-size: 19px;
+    font-family: bpg_mrgvlovani_caps_2010;
+    color: #574DFA;
+}
+.mybutton830 {
+    background-color: #574DFA;
+    color: #ffffff;
+    height: 38px;
+    width: 130px;
+    margin-bottom: 22px;
+}
+.myselect830{
+    border:none;
+    padding-right: 22px;
+    background-color: white;
+    color:#888888;
+    padding-left: 15px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    /* no standardized syntax available, no ie-friendly solution available */
+}
+select + ii.fa {
+    float: right;
+    margin-top: -22px;
+    margin-right: 5px;
+    /* this is so when you click on the chevron, your click actually goes on the dropdown menu */
+    pointer-events: none;
+    /* everything after this is just to cover up the original arrow */
+    /* (for browsers that don't support the syntax used above) */
+    background-color: #fff;
+    padding-right: 5px;
+}
+.my830z {
+    width:830px;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    box-shadow: 5px 5px 5px grey;
+}
+.propos12{
+    background-color: #EAE9FF;
+    color: #574DFA;
+    display: block;
+    margin: 15px;
+    height: 38px;
+    padding: 5px;
+    cursor: pointer;
 }

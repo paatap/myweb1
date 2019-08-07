@@ -23,13 +23,14 @@ public class bb extends HttpServlet {
         System.out.println("111111111111111111111");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+
+            String ss=request.getParameter("txt");
+
+
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet NewServlet</title>");
-            out.println("    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\n" +
-                    "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n" +
-                    "    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>");
             out.println("</head>");
             out.println("<body>");
             String agent0=request.getHeader("user-agent").toLowerCase();
@@ -39,31 +40,11 @@ public class bb extends HttpServlet {
             out.println("<h1>" + agent0 +
                     "=<br>=*"+agent+ "*==</h1><br>");
             out.println(printvars(request));
-            out.println("<div class=\"container\">\n" +
-                    "    <div class=\"row\">\n" +
-                    "        <div class=\"col-lg-3 col-sm-3\">\n" +
-                    "            <div class=\"well\">\n" +
-                    "\n" +
-                    "            </div>\n" +
-                    "        </div>\n" +
-                    "        <div class=\"col-lg-9 col-sm-9\">\n" +
-                    "\n" +
-                    "            <div class=\"col-lg-6 col-sm-6\">\n" +
-                    "                <div class=\"well\">\n" +
-                    "\n" +
-                    "                </div>\n" +
-                    "            </div>\n" +
-                    "\n" +
-                    "            <div class=\"col-lg-6 col-sm-6\">\n" +
-                    "                <div class=\"well\">\n" +
-                    "\n" +
-                    "                </div>\n" +
-                    "            </div>\n" +
-                    "\n" +
-                    "        </div>\n" +
-                    "    </div>\n" +
-                    "</div>");
 
+            out.println("<form accept-charset='utf-8' action='bb' method='get' name='my_table' id='my_table'>");
+            out.println("<input id='txt' name='txt'/>");
+            out.println("<input type='submit' value='send'/>");
+            out.println("</form>");
             out.println("</body>");
             out.println("</html>");
         }

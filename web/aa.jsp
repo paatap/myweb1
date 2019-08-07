@@ -14,7 +14,7 @@
 
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <link href="css/aacss.css" rel="stylesheet">
@@ -57,7 +57,7 @@
             -->
 
 <div class="row">
-        <form id="msform">
+        <form  id="msform">
 
             <ul id="progressbar">
                 <li class="active">Personal Details</li>

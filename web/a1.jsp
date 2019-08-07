@@ -93,7 +93,7 @@
 </style>
 <body>
 
-<form id="regForm" action="/action_page.php">
+<form  id="regForm" action="/action_page.php">
     <h1>Register:</h1>
     <!-- One "tab" for each step in the form: -->
     <div class="tab">Name:

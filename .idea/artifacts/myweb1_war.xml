@@ -3,6 +3,11 @@
     <output-path>$PROJECT_DIR$/out/artifacts/myweb1_war</output-path>
     <root id="archive" name="myweb1.war">
       <element id="artifact" artifact-name="myweb1:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="javax.websocket:javax.websocket-api:1.1" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>
